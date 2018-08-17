@@ -1,8 +1,9 @@
-import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
-import "../../../node_modules/@polymer/paper-card/paper-card.js";
-import "../../../node_modules/@polymer/iron-icons/iron-icons.js";
-import "../../../node_modules/@polymer/iron-icons/communication-icons.js";
-import "../../../node_modules/@polymer/paper-button/paper-button.js";
+import { html, LitElement } from '@polymer/lit-element';
+import '@polymer/paper-card';
+import '@polymer/iron-icons/iron-icons';
+import '@polymer/iron-icons/communication-icons';
+import '@polymer/paper-button';
+
 export default class SmallCard extends LitElement {
   constructor() {
     super();
@@ -12,7 +13,7 @@ export default class SmallCard extends LitElement {
     return {
       text: String
     };
-  }
+  };
 
   _render() {
     return html`
@@ -40,10 +41,10 @@ export default class SmallCard extends LitElement {
         <div class="japanese-character">${this.text}</div>
       </div>
     </paper-card>
-    `;
+    `
   }
 
-  _firstRendered() {}
-
+  _firstRendered() { }
 }
+
 customElements.define("small-card", SmallCard);

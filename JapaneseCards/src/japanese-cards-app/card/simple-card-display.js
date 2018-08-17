@@ -1,6 +1,8 @@
-import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
+import { html, LitElement } from '@polymer/lit-element';
+
 import { SimpleCard } from './simple-card.js';
 import * as data from '../data/data.js';
+
 export default class SimpleCardDisplay extends LitElement {
   constructor() {
     super();
@@ -8,8 +10,9 @@ export default class SimpleCardDisplay extends LitElement {
   }
 
   static get properties() {
-    return {};
-  }
+    return {
+    };
+  };
 
   _render() {
     return html`
@@ -25,10 +28,11 @@ export default class SimpleCardDisplay extends LitElement {
       <div class="card-container">
         <simple-card dataElement="${this.dataElement}"></simple-card>
       </div>
-    `;
+    `
   }
 
-  _firstRendered() {}
-
+  _firstRendered() {
+   }
 }
+
 customElements.define("simple-card-display", SimpleCardDisplay);

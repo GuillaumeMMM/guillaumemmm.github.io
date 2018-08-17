@@ -1,17 +1,19 @@
-import { html, LitElement } from "../../node_modules/@polymer/lit-element/lit-element.js";
+import {html, LitElement} from '@polymer/lit-element';
+
 import { SimpleCardDisplay } from './card/simple-card-display.js';
 import { CardsCollection } from './collection/cards-collection.js';
 import { Navbar } from './meta/navbar.js';
 import { Home } from './meta/home.js';
 import { ExercisesList } from './exercise/exercises-list.js';
 import { CollectionsList } from './collection/collections-list.js';
-import { Router } from "../../node_modules/@vaadin/router/dist/vaadin-router.js";
+
+import {Router} from '@vaadin/router';
 
 class JapaneseCardsApp extends LitElement {
   constructor() {
     super();
   }
-
+  
   _render() {
     return html`
       <style>
@@ -34,24 +36,18 @@ class JapaneseCardsApp extends LitElement {
         <!-- <navbar-element></navbar-element> -->
         <div id="outlet"></div>
       </div>
-    `;
+    `
   }
 
   _firstRendered() {
     const outlet = this.shadowRoot.getElementById('outlet');
     const router = new Router(outlet);
-    router.setRoutes([{
-      path: '/',
-      component: 'home-element'
-    }, {
-      path: '/exercises',
-      component: 'exercises-list'
-    }, {
-      path: '/collections',
-      component: 'collections-list'
-    }]);
+    router.setRoutes([
+      {path: '/', component: 'home-element'},
+      {path: '/exercises', component: 'exercises-list'},
+      {path: '/collections', component: 'collections-list'},
+    ]);
   }
-
 }
 
 customElements.define("japanese-cards-app", JapaneseCardsApp);

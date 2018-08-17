@@ -1,0 +1,18 @@
+{
+  "name": "japanese-cards",
+  "dependencies": {
+    "@ibm/plex": "^1.0.2",
+    "@polymer/iron-icon": "^3.0.0-pre.21",
+    "@polymer/iron-icons": "^3.0.0-pre.21",
+    "@polymer/lit-element": "^0.5.2",
+    "@polymer/paper-button": "^3.0.0-pre.21",
+    "@polymer/paper-card": "^3.0.0-pre.21",
+    "@polymer/paper-item": "^3.0.0-pre.21",
+    "@polymer/polymer": "^3.0.0",
+    "@vaadin/router": "^1.1.0"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "wct-browser-legacy": "^1.0.0"
+  }
+}
