@@ -1,6 +1,5 @@
-import { html, LitElement } from '@polymer/lit-element';
+import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 import { Navbar } from './navbar.js';
-
 export default class Home extends LitElement {
   constructor() {
     super();
@@ -10,7 +9,7 @@ export default class Home extends LitElement {
     return {
       text: String
     };
-  };
+  }
 
   _render() {
     return html`
@@ -37,10 +36,10 @@ export default class Home extends LitElement {
         </div>
         <!-- <img id="home-image" src="src/img/japan.png" alt="Fuji Mount"> -->
       </div>
-    `
+    `;
   }
 
-  _firstRendered() { }
-}
+  _firstRendered() {}
 
+}
 customElements.define("home-element", Home);

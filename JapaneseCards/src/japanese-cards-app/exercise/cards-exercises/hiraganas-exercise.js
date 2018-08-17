@@ -1,22 +1,22 @@
-import { html, LitElement } from '@polymer/lit-element';
-import '@polymer/paper-button';
+import { html, LitElement } from "../../../../node_modules/@polymer/lit-element/lit-element.js";
+import "../../../../node_modules/@polymer/paper-button/paper-button.js";
 import * as data from '../../data/data.js';
-
 export default class HiraganasExercise extends LitElement {
   constructor() {
     super();
-    this.cards = [
-      {front:'front', back:'back'}
-    ];
+    this.cards = [{
+      front: 'front',
+      back: 'back'
+    }];
     this.currentIndex = 0;
   }
 
   static get properties() {
     return {
       urlName: String,
-      data: String,
+      data: String
     };
-  };
+  }
 
   _render() {
     return html`
@@ -85,27 +85,26 @@ export default class HiraganasExercise extends LitElement {
       </div>
       <div class="global-content">
         <div class="content">
-          <paper-button raised id="previous" class="visible" on-click="${(e) => this.previousCard(e)}">Previous</paper-button>
+          <paper-button raised id="previous" class="visible" on-click="${e => this.previousCard(e)}">Previous</paper-button>
           <div class="cards">
             <a href="#"><simple-card dataElement="${this.cards[this.currentIndex]}"></simple-card></a>
           </div>
-          <paper-button raised id="next" class="visible" on-click="${(e) => this.nextCard(e)}">Next</paper-button>
+          <paper-button raised id="next" class="visible" on-click="${e => this.nextCard(e)}">Next</paper-button>
           <div class="buttons-smallscreen">
-            <paper-button raised id="next-smallscreen" class="hidden" on-click="${(e) => this.nextCard(e)}">Next</paper-button>
-            <paper-button raised id="previous-smallscreen" class="hidden" on-click="${(e) => this.previousCard(e)}">Previous</paper-button>
+            <paper-button raised id="next-smallscreen" class="hidden" on-click="${e => this.nextCard(e)}">Next</paper-button>
+            <paper-button raised id="previous-smallscreen" class="hidden" on-click="${e => this.previousCard(e)}">Previous</paper-button>
           </div>
         </div>
       </div>
-    `
+    `;
   }
 
-  _firstRendered() { 
+  _firstRendered() {
     this.cards = this.getCardsFromIds(this.data);
     this.requestRender();
   }
 
-  _didRender() {
-    // this.shadowRoot.getElementById('previous').setAttribute("disabled", "false");
+  _didRender() {// this.shadowRoot.getElementById('previous').setAttribute("disabled", "false");
     // this.shadowRoot.getElementById('next').setAttribute("disabled", "false");
     // if (this.cards.length < 2) {
     //   this.shadowRoot.getElementById('previous').setAttribute("disabled", "true");
@@ -124,9 +123,9 @@ export default class HiraganasExercise extends LitElement {
   getCardsFromIds(componentData) {
     const cardsIds = componentData['cards'];
     const dataCards = data['cards'];
-    const componentCards = dataCards.filter((card) => {
+    const componentCards = dataCards.filter(card => {
       let inExercise = false;
-      cardsIds.forEach((cardId) => {
+      cardsIds.forEach(cardId => {
         if (cardId === card['id']) {
           inExercise = true;
         }
@@ -137,13 +136,14 @@ export default class HiraganasExercise extends LitElement {
   }
 
   previousCard(e) {
-    (this.currentIndex === 0) ? this.currentIndex = 0 : this.currentIndex--;
+    this.currentIndex === 0 ? this.currentIndex = 0 : this.currentIndex--;
     this.requestRender();
   }
-  nextCard(e) {
-    (this.currentIndex === this.cards.length - 1) ? this.currentIndex = this.cards.length - 1 : this.currentIndex++;
-    this.requestRender();
-  }
-}
 
+  nextCard(e) {
+    this.currentIndex === this.cards.length - 1 ? this.currentIndex = this.cards.length - 1 : this.currentIndex++;
+    this.requestRender();
+  }
+
+}
 customElements.define("hiraganas-exercise", HiraganasExercise);

@@ -1,19 +1,18 @@
-import { html, LitElement } from '@polymer/lit-element';
-
+import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 export default class CollectionsList extends LitElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    _render() {
-        return html`
+  _render() {
+    return html`
         <style>
         </style>
         This is the collections list.
-    `
-    }
+    `;
+  }
 
-    _firstRendered() { }
+  _firstRendered() {}
+
 }
-
 customElements.define("collections-list", CollectionsList);

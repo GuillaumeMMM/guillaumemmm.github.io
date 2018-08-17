@@ -1,7 +1,5 @@
-import { html, LitElement } from '@polymer/lit-element';
-
+import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 import * as data from '../data/data.js';
-
 export default class Navbar extends LitElement {
   constructor() {
     super();
@@ -9,9 +7,9 @@ export default class Navbar extends LitElement {
 
   static get properties() {
     return {
-      text: String,
+      text: String
     };
-  };
+  }
 
   _render() {
     return html`
@@ -49,20 +47,22 @@ export default class Navbar extends LitElement {
           <li><a href="/exercises" id="exercises">Exercises</a></li>
         </ul>
       </div>
-    `
+    `;
   }
 
   _firstRendered() {
     if (this.text === 'home') {
       this.shadowRoot.getElementById('home').classList.add("underlined");
     }
+
     if (this.text === 'collections') {
       this.shadowRoot.getElementById('collections').classList.add("underlined");
     }
+
     if (this.text === 'exercises') {
       this.shadowRoot.getElementById('exercises').classList.add("underlined");
     }
-   }
-}
+  }
 
+}
 customElements.define("navbar-element", Navbar);

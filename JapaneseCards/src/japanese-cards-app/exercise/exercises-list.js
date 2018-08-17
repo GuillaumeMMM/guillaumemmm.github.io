@@ -1,27 +1,25 @@
-import { html, LitElement } from '@polymer/lit-element';
-
+import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 import * as data from '../data/data.js';
 import { HiraganasExercise } from './cards-exercises/hiraganas-exercise.js';
 import { KatakanasExercise } from './cards-exercises/katakanas-exercise.js';
 import { Navbar } from '../meta/navbar.js';
-
 export default class ExercisesList extends LitElement {
   constructor() {
     super();
     this.exercise = this.getExercises(data);
-    this.hiraganas = this.exercise.filter((ex) => {
-        return ex['name'] === 'Hiraganas';
+    this.hiraganas = this.exercise.filter(ex => {
+      return ex['name'] === 'Hiraganas';
     })[0];
-    this.katakanas = this.exercise.filter((ex) => {
-        return ex['name'] === 'Katakanas';
+    this.katakanas = this.exercise.filter(ex => {
+      return ex['name'] === 'Katakanas';
     })[0];
   }
 
   static get properties() {
     return {
-      text: String,
+      text: String
     };
-  };
+  }
 
   _render() {
     return html`
@@ -87,7 +85,7 @@ export default class ExercisesList extends LitElement {
             </div>
             <div class="content">
                 <div class="summary-element">
-                    <a href="#" id="summary-hiragana" on-click="${(e) => this.hiraganaSelected(e)}">
+                    <a href="#" id="summary-hiragana" on-click="${e => this.hiraganaSelected(e)}">
                         <paper-card>
                             <div class='summary-title'>
                                 Hiraganas
@@ -99,7 +97,7 @@ export default class ExercisesList extends LitElement {
                     </a>
                 </div>
                 <div class="summary-element"> 
-                    <a href="#" id="summary-katakanas" on-click="${(e) => this.katakanaSelected(e)}">
+                    <a href="#" id="summary-katakanas" on-click="${e => this.katakanaSelected(e)}">
                         <paper-card>
                             <div class='summary-title'>
                                 Katakanas
@@ -116,7 +114,7 @@ export default class ExercisesList extends LitElement {
             <hiraganas-exercise id="hiraganas" class="invisible" data="${this.hiraganas}"></hiraganas-exercise>
             <katakanas-exercise id="katakanas"  class="invisible" data="${this.katakanas}"></katakanas-exercise>
         </div>
-    `
+    `;
   }
 
   _firstRendered() {}
@@ -125,6 +123,7 @@ export default class ExercisesList extends LitElement {
     this.shadowRoot.getElementById('summary').classList.add("invisible");
     this.shadowRoot.getElementById('hiraganas').classList.add("visible");
   }
+
   katakanaSelected(e) {
     this.shadowRoot.getElementById('summary').classList.add("invisible");
     this.shadowRoot.getElementById('katakanas').classList.add("visible");
@@ -132,13 +131,15 @@ export default class ExercisesList extends LitElement {
 
   getExercises(dataTmp) {
     let exercises = [];
+
     for (let i = 0; i < Object.keys(dataTmp).length; i++) {
-        if (dataTmp[Object.keys(dataTmp)[i]]['type'] === 'exercise') {
-            exercises.unshift(dataTmp[Object.keys(dataTmp)[i]]);
-        }
+      if (dataTmp[Object.keys(dataTmp)[i]]['type'] === 'exercise') {
+        exercises.unshift(dataTmp[Object.keys(dataTmp)[i]]);
+      }
     }
+
     return exercises;
   }
-}
 
+}
 customElements.define("exercises-list", ExercisesList);

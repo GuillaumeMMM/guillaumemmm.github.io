@@ -1,15 +1,13 @@
-import { html, LitElement } from '@polymer/lit-element';
-
+import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 import { SmallCard } from '../card/small-card.js';
-
 export default class CardsCollection extends LitElement {
-    constructor() {
-        super();
-        this.characters = ['か', 'あ', 'さ', 'た', 'な', 'は', 'ま', 'や', 'ら', 'わ'];
-    }
+  constructor() {
+    super();
+    this.characters = ['か', 'あ', 'さ', 'た', 'な', 'は', 'ま', 'や', 'ら', 'わ'];
+  }
 
-    _render() {
-        return html`
+  _render() {
+    return html`
         <style>
             .collection{
                 height: 100%;
@@ -41,10 +39,10 @@ export default class CardsCollection extends LitElement {
             <small-card text="${this.characters[2]}"></small-card>
             <small-card text="${this.characters[3]}"></small-card>
         </div>
-    `
-    }
+    `;
+  }
 
-    _firstRendered() { }
+  _firstRendered() {}
+
 }
-
 customElements.define("cards-collection", CardsCollection);
