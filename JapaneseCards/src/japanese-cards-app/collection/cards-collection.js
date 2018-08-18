@@ -1,5 +1,6 @@
 import { html, LitElement } from "../../../node_modules/@polymer/lit-element/lit-element.js";
 import { SmallCard } from '../card/small-card.js';
+import { SimpleCard } from "../card/simple-card.js";
 export default class CardsCollection extends LitElement {
   constructor() {
     super();
