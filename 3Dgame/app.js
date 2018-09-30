@@ -6,6 +6,7 @@ const SQUARE_SIZE = 2;
 const INITIAL_SPEED = 0.3;
 const INITIAL_DENSITY = 0.5;
 const INITIAL_SPACE_BETWEEN_LABS = 30;
+const COLORS = ['red', 'green', 'pink', 'black', 'blue'];
 
 const SPACESHIP_MODEL_OFFSET_X = -5;
 const SPACESHIP_MODEL_OFFSET_Y = -7;
@@ -22,14 +23,15 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
 var geometry1 = new THREE.BoxGeometry(SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE);
-var material = new THREE.MeshPhongMaterial({ color: 'red', transparent: true, opacity: 1 });
+var material = new THREE.MeshPhongMaterial({ color: COLORS[0], transparent: true, opacity: 1 });
 
 let loadedArrays = [];
 let loadedArraysBlocksDetails = [];
 let nextLab = 0;
 let gameOn = false;
 let speed = INITIAL_SPEED;
-let density = INITIAL_DENSITY
+let density = INITIAL_DENSITY;
+let nextLevelLimit = 0;
 
 //  Add an array to the scene
 addArrayToScene = function (index) {
@@ -212,6 +214,7 @@ document.onkeyup = function (e) {
 gameInit = function () {
     loadedArrays = [];
     loadedArraysBlocksDetails = [];
+    material = new THREE.MeshPhongMaterial({ color: COLORS[0], transparent: true, opacity: 1 });
     nextLab = 0;
     speed = INITIAL_SPEED;
     density = INITIAL_DENSITY;
@@ -279,8 +282,10 @@ function animate() {
     // if (gameOn && loaded) {
         if (gameOn) {
 
-        if (nextLab > 10) {
-            speed = 0.35;
+        if (nextLab > 10 * (nextLevelLimit + 1)) {
+            nextLevelLimit ++;
+            speed += 0.06;
+            material = new THREE.MeshPhongMaterial({ color: COLORS[nextLevelLimit % COLORS.length], transparent: true, opacity: 1 });
             density= 0.7;
         }
 
