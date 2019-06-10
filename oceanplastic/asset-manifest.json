@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/oceanplastic/static/css/main.ded97fc4.chunk.css",
-    "main.js": "/oceanplastic/static/js/main.562e8962.chunk.js",
-    "main.js.map": "/oceanplastic/static/js/main.562e8962.chunk.js.map",
+    "main.css": "/oceanplastic/static/css/main.e8af7ad3.chunk.css",
+    "main.js": "/oceanplastic/static/js/main.0b643a84.chunk.js",
+    "main.js.map": "/oceanplastic/static/js/main.0b643a84.chunk.js.map",
     "runtime~main.js": "/oceanplastic/static/js/runtime~main.e7085afd.js",
     "runtime~main.js.map": "/oceanplastic/static/js/runtime~main.e7085afd.js.map",
     "static/js/2.e0b0020e.chunk.js": "/oceanplastic/static/js/2.e0b0020e.chunk.js",
     "static/js/2.e0b0020e.chunk.js.map": "/oceanplastic/static/js/2.e0b0020e.chunk.js.map",
     "index.html": "/oceanplastic/index.html",
-    "precache-manifest.6add789076770287c11c4aa159d89510.js": "/oceanplastic/precache-manifest.6add789076770287c11c4aa159d89510.js",
+    "precache-manifest.32dfdc6c78f9da3fa42eacc5750db074.js": "/oceanplastic/precache-manifest.32dfdc6c78f9da3fa42eacc5750db074.js",
     "service-worker.js": "/oceanplastic/service-worker.js",
-    "static/css/main.ded97fc4.chunk.css.map": "/oceanplastic/static/css/main.ded97fc4.chunk.css.map",
+    "static/css/main.e8af7ad3.chunk.css.map": "/oceanplastic/static/css/main.e8af7ad3.chunk.css.map",
     "static/media/App.scss": "/oceanplastic/static/media/bg.0997ee64.jpeg"
   }
 }

@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "345e179cf374d444371ffa9fa44afd53",
+    "revision": "7e37e2b88716c14be87a7332368fa29d",
     "url": "/oceanplastic/index.html"
   },
   {
-    "revision": "aab93d8de3e2d97046ee",
-    "url": "/oceanplastic/static/css/main.ded97fc4.chunk.css"
+    "revision": "5b4900f8d851f8fe4616",
+    "url": "/oceanplastic/static/css/main.e8af7ad3.chunk.css"
   },
   {
     "revision": "3de4ac22855f4d0f8d8d",
     "url": "/oceanplastic/static/js/2.e0b0020e.chunk.js"
   },
   {
-    "revision": "aab93d8de3e2d97046ee",
-    "url": "/oceanplastic/static/js/main.562e8962.chunk.js"
+    "revision": "5b4900f8d851f8fe4616",
+    "url": "/oceanplastic/static/js/main.0b643a84.chunk.js"
   },
   {
     "revision": "3bdcc0db867ceca360d7",

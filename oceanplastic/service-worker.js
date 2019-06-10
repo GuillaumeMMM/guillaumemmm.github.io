@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/oceanplastic/precache-manifest.6add789076770287c11c4aa159d89510.js"
+  "/oceanplastic/precache-manifest.32dfdc6c78f9da3fa42eacc5750db074.js"
 );
 
 self.addEventListener('message', (event) => {
